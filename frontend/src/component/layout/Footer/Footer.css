@@ -10,7 +10,6 @@ footer {
   .leftFooter {
     width: 20%;
     display: flex;
-  
     flex-direction: column;
     align-items: center;
   }
@@ -32,14 +31,13 @@ footer {
   
   .midFooter {
     width: 60%;
-  
     text-align: center;
   }
   
   .midFooter > h1 {
     font-size: 4vmax;
     font-family: "Roboto";
-    color: #eb4034;
+    color: #fc4336;
   }
   .midFooter > p {
     max-width: 60%;
@@ -49,7 +47,6 @@ footer {
   
   .rightFooter {
     width: 20%;
-  
     display: flex;
     flex-direction: column;
     align-items: center;
