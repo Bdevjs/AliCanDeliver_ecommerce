@@ -1,5 +1,5 @@
 .banner {
-    background-image: url("../../images/cover.jfif");
+    background-image: url("../../images/grocery.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,7 +13,7 @@
   }
   
   .banner > h1 {
-    margin: 5vmax;
+    margin: 3.5vmax;
     font: 600 2.5vmax "Roboto";
   }
   

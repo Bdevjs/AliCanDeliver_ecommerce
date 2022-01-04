@@ -15,7 +15,7 @@ const Home = () => {
     return <Fragment>
         <MetaData title="Techdummise_Homepage"/>
         <div className='banner'>
-            <p>Welcome to Ecommerce</p>
+            <p>Welcome to Halal Grocery</p>
             <h1>FIND AWSOME PRODUCT BELOW</h1>
 
             <a href="#container">
