@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import WebFont from "webfontloader"; //automatic download front [npm i webfontloader]
 import React from "react";
 import Home from "./component/Home/Home";
+
 function App() {
 
   React.useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
   return <Router>
     <Header />
     <Route extact path="/" component={Home} />
+    
     <Footer />
   </Router>;  
   
