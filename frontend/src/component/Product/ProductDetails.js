@@ -1,11 +1,42 @@
-import React from 'react'
 
-const ProductDetails = () => {
+import React, { Fragment, useEffect, useState } from "react";
+import Carousel from "react-material-ui-carousel";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  clearErrors,
+  getProductDetails,
+  newReview,
+} from "../../actions/productAction";
+import "./ProductDetails.css";
+
+const ProductDetails = ({ match }) => {
+    const dispatch = useDispatch();
+    const { product, loading, error} = useSelector(state => state.productDetails)
+    useEffect(()=>{
+        dispatch(getProductDetails(match.params.id))
+    }, [dispatch,match.params.id])
     return (
-        <div>
-            <h1>Product details</h1>
-        </div>
+        <Fragment>
+            <div className='ProductDetails'>
+                <div>
+                    <Carousel>
+                        {product.images &&
+                         product.images.map((item, i) => 
+                            <img 
+
+                                className='CarouselImage'
+                                key={item.url}
+                                src={item.url}
+                                alt={`${i}Slide`}
+                            />
+
+                         
+                         )}
+                    </Carousel>
+                </div>
+            </div>
+        </Fragment>
     )
 }
 
-export default ProductDetails;
+export default ProductDetails
