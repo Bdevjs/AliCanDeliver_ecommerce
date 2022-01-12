@@ -1,5 +1,10 @@
 const app = require("./app");
 const dotenv = require("dotenv");
+const cloudinary = require("cloudinary");
+
+//Database import file from database file 
+const connectDatabase = require("./config/database")
+
 
 // Handiling Uncaught Exception
 process.on("uncaughtException",(err)=>{
@@ -10,18 +15,22 @@ process.on("uncaughtException",(err)=>{
 })
 
 
-//Database import file from database file 
-const connectDatabase = require("./config/database")
 
 //config
 dotenv.config({path:"backend/config/config.env"});
 
 
 //connecting to database
-connectDatabase()
+connectDatabase();
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+  });
 
 const server = app.listen(process.env.PORT,()=>{
-    console.log(`server is running on http://localhost:${process.env.PORT}`)
+    console.log(`server is running on http://localhost:${process.env.PORT}`);
 })
 
 
