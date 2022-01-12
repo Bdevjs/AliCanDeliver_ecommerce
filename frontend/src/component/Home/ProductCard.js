@@ -4,7 +4,7 @@ import ReactStars from "react-rating-stars-component";
 
 
 
-const Product = ({ product }) => {
+const ProductCard = ({ product }) => {
     
     const options = {
         edit: false,
@@ -27,10 +27,10 @@ const Product = ({ product }) => {
               ({product.numOfReviews} Reviews)
             </span>
           </div>
-          <span>{`${product.price}`}</span>
+          <span>{`$${product.price}`}</span>
         </Link>
       );
     };
 
-export default Product;
+export default ProductCard;
 

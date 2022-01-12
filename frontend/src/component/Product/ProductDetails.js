@@ -11,7 +11,7 @@ import {
 } from "../../actions/productAction";
 import "./ProductDetails.css";
 import ReactStars from "react-rating-stars-component";
-
+import MetaData from "../layout/MetaData";
 import { useAlert } from "react-alert";
 
 
@@ -29,7 +29,7 @@ const ProductDetails = ({ match }) => {
 
         dispatch(getProductDetails(match.params.id));
 
-    }, [dispatch,match.params.id]);
+    }, [dispatch,match.params.id, error, alert]);
 
     const options = {
         edit: false,
@@ -44,22 +44,23 @@ const ProductDetails = ({ match }) => {
         <Fragment>
             {loading? <Loader /> : (
                 <Fragment>
-            <div className="ProductDetails">
-                <div className="trya">
-                    <Carousel>
-                        {product.images &&
-                         product.images.map((item, i) => 
-                            <img 
+                    <MetaData title={`${product.name} -- ECOMMERCE`}/>
+                    <div className="ProductDetails">
+                        <div className="trya">
+                            <Carousel>
+                                {product.images &&
+                                product.images.map((item, i) => 
+                                    <img 
 
-                                className='CarouselImage'
-                                key={item.url}
-                                src={item.url}
-                                alt={`${i}Slide`}
-                            />
-                        
-                         )}
-                    </Carousel>
-                </div>
+                                        className='CarouselImage'
+                                        key={item.url}
+                                        src={item.url}
+                                        alt={`${i}Slide`}
+                                    />
+                                
+                                )}
+                            </Carousel>
+                        </div>
             
 
                 <div>
