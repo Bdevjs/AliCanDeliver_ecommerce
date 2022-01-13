@@ -9,13 +9,17 @@ import Contact from "./component/contact/ContactPage";
 import Home from "./component/Home/Home";
 import Footer from "./component/layout/Footer/Footer";
 import Header from "./component/layout/Header/Header.js";
-import UserOptions from "./component/layout/Header/UserOptions.js";
+import UserOptions from "./component/layout/Header/UserOptions";
 import ProductDetails from "./component/Product/ProductDetails";
 import Products from "./component/Product/Products";
 import Search from "./component/Product/Search";
 import LoginSignUp from "./component/User/LoginSignUp";
 import Profile from "./component/User/Profile.js";
 import store from "./store";
+import ProtectedRoute from "./component/Route/ProtectedRoute";
+import  UpdateProfile  from "./component/User/UpdateProfile";
+import  UpdatePassword  from "./component/User/UpdatePassword";
+import  ForgotPassword  from "./component/User/ForgotPassword";
 
 function App() {
 
@@ -39,9 +43,11 @@ function App() {
     <Route  path="/products/:keyword" component={Products} />
     <Route exact path="/search" component={Search} />
     <Route exact path="/contact" component={Contact} />
-    <Route exact path="/account" component={Profile} />
+    <ProtectedRoute exact path="/account" component={Profile} />
     <Route exact path="/login" component={LoginSignUp} />
-    
+    <ProtectedRoute exact path="/me/update" component={UpdateProfile} />
+    <ProtectedRoute exact path="/password/update" component={UpdatePassword} />
+    <Route exact path="/password/forgot" component={ForgotPassword} />
     <Footer />
   </Router>;  
   
